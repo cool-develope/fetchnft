@@ -1,0 +1,28 @@
+specVersion: 0.0.2
+schema:
+  file: erc721.schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: erc721
+    network: rinkeby
+    source:
+      address: "0xD55Ae3A7D786Ee11Bb3f1cE7Db1d3b9C2BB951B1"
+      abi: IERC721
+      startBlock: 9342800
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - ERC721Contract
+      abis:
+        - name: IERC721
+          file: node_modules/@openzeppelin/contracts/build/contracts/IERC721Metadata.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: erc721/erc721.wasm
