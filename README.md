@@ -1,9 +1,10 @@
 # Fetch-NFT
 
-## Subgraph Studio
+## Subgraph Legacy Explorer
 
-The subgraph studio url: https://thegraph.com/studio/
-First, need to connect the wallet, and then create the project with github repo url. The commands are as follows:
+Graph Explorer only provides ethereum mainnet. You can test the other networks in Legacy Explorer.
+The Subgraph Legacy Explorer url: https://thegraph.com/legacy-explorer/dashboard
+First, need to sign up with github user, and then create the subgraph project. The commands are as follows:
 
 ```bash
 # install graph-cli
